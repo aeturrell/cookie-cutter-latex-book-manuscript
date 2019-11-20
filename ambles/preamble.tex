@@ -1,0 +1,115 @@
+%#############################################################################################
+% Preamble packages
+%#############################################################################################
+
+% Formatting/page layout==========================
+\usepackage{fullpage}			% default setting of page layout (margins to 1inch etc.)
+\usepackage{url}	 			% for inputting URLs using \url{url_here}
+\usepackage{wrapfig}
+\usepackage{comment}
+\setlength{\headsep}{1.0ex}		% Leaves a gap of one line after the header
+
+\newcommand {\emptypage}{		% Command for introducing an empty page
+	\thispagestyle{empty}		% Removes headers from the page
+	\cleardoublepage			% Inserts double pages
+}
+
+\usepackage{setspace}			% To set 1.5 spacing
+	\onehalfspace
+	%\doublespace
+\setlength{\parindent}{0.0em}	        % Set the indentation of paragraphs to zero
+
+							% Adjust the gap between paragraphs to some fraction
+							% of the baseline gap (the gap between two successive lines in a paragraph)
+							% (also reduces white space in the text)
+\setlength\parskip{0.5\baselineskip
+	plus 0.1\baselineskip
+	minus 0.4\baselineskip
+}
+
+% New symbol definitions for footnotes ===============
+\usepackage[perpage,symbol*]{footmisc}
+\DefineFNsymbolsTM{myfnsymbols}{% def. from footmisc.sty "bringhurst" symbols
+  \textasteriskcentered *
+  \textdagger    \dagger
+  \textdaggerdbl \ddagger
+  \textsection   \mathsection
+  \textbardbl    \|%
+  \textparagraph \mathparagraph
+}%
+\setfnsymbol{myfnsymbols}
+
+% Epigram definition	 ============================
+% epigraph with 4 params.
+% first is width
+% second is text
+% third is author
+% four is book title
+\newcommand\bookepigraph[4]{
+\vspace{1em}\hfill{}\begin{minipage}{#1}{\begin{spacing}{0.9}
+\small\noindent\textit{#2}\end{spacing}
+\vspace{1em}
+\hfill{}{#3}\\
+ 
+\vspace{-1em}\begin{flushright}{#4}\end{flushright}}\vspace{2em}
+\end{minipage}}
+ 
+% epigraph with 3 params
+% first is width
+% second is text
+% third is author
+\newcommand\epigraph[3]{
+\vspace{1em}\hfill{}\begin{minipage}{#1}{\begin{spacing}{0.9}
+\noindent\large\textit{#2}\end{spacing}
+\vspace{1em}
+\hfill{}{#3}}\vspace{2em}\flushright
+\end{minipage}}
+ 
+% epigraph with 2 params
+% first is width
+% second is text
+\newcommand\anonymousepigraph[2]{
+\vspace{1em}\hfill{}\begin{minipage}{#1}{\begin{spacing}{0.9}
+\small\noindent\textit{#2}\end{spacing}}
+\vspace{1em}
+\end{minipage}}
+
+% Equations ==================================================================
+\usepackage{amsmath,amssymb,bm,mathtools,array}
+\numberwithin{equation}{chapter} 						%numbers equations within chapters 
+\newcommand{\tensor}[1]{{\underline{\underline{#1}}}}		%for tensors Usage: \tensor{}
+\renewcommand \vec[1]{{\bf{#1}}}						%overrides latex version
+\newcommand {\signB}{\sigma_B}						%command for sign of magnetic field symbol
+\renewcommand {\d}{\text{d}}							%for imputing derivative style `d' into equations
+\newcommand{\Eq}[1]{\text{equation }\eqref{#1}}			%useful command for referencing equations
+
+% Figures ===================================================================
+\usepackage{graphicx}
+% \usepackage[draft]{graphicx}                 % <--- use this for box with filename in instead of actual fig
+\usepackage{epstopdf}
+\usepackage{subfigure}
+\usepackage{booktabs}%, ctable}		%to typeset tables in a 'book' style, ctable also for tables
+%\usepackage{multirow}				%for tables
+%\usepackage[latin1]{inputenc}
+\usepackage{tikz}
+\usetikzlibrary{shapes,arrows}
+\usepackage{ccaption}				%package for editing the format of figure and table captions
+	\captionnamefont{\bfseries} 		%makes the figure title bold
+	\captiontitlefont{\small}			%makes the font size small
+	%\hangcaption					%indents the caption a bit from the main body
+\usepackage[figurewithin=chapter]{caption} % Labels figures per chapter, not per section	
+\renewcommand{\topfraction}{1.0}		% Allows figure to cover given fraction of page (1=all page)
+
+% Text  =====================================================================
+\usepackage{blindtext}				% Generates dummy text
+\usepackage[ pdftex,                                   
+plainpages = false, 
+pdfpagelabels, pdfpagelayout = SinglePage, 
+bookmarks, bookmarksopen = true,bookmarksnumbered = true,breaklinks = true,
+linktocpage, pagebackref=true,colorlinks = true, linkcolor = black,urlcolor  = black,citecolor = black,anchorcolor = black, hyperindex = true,
+]{hyperref}							 % Embedded hyperlinks
+\usepackage{framed}	                          % For putting frames around bits of text (\texttildelow)
+\usepackage[nottoc,notlof,notlot]{tocbibind}% To include bibliography in table of contents. Note [notton]
+								 % is used to exclude the table of contents itself from the
+								 % table of contents, while [notlof] excludes list of figures and
+								 % [notlot] excludes list of tables

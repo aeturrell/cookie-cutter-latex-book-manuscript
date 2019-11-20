@@ -1,3 +1,32 @@
+# Ignore Mac folder settings
+.DS_Store
+# Ignore VS Code settings
+.vscode/
+exported_word/
+!exported_word/.gitkeep
+
+# Core latex/pdflatex auxiliary files:
+*.aux
+*.lof
+*.log
+*.lot
+*.fls
+*.out
+*.toc
+*.fmt
+*.fot
+*.cb
+*.cb2
+.*.lb
+*-converted-to.*
+*.synctex.gz
+*.bak
+*.brf
+*.blg
+*.bbl
+*.fdb_latexmk
+*.bib.sav
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]

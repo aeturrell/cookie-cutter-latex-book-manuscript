@@ -1,0 +1,21 @@
+%#############################################################################################
+% Main compiler page for book manuscript
+%#############################################################################################
+
+\documentclass[12pt,a4paper,twoside]{book}
+
+\author{Your name}
+\title{Manuscript Title}
+\date{\today}
+
+% Include the preamble
+\input{ambles/preamble}
+
+\begin{document}
+	% Chapter(s)
+	\maketitle
+	\input{chapters/chapter01}
+	\input{chapters/chapter02}
+	% Include postamble (deals with references)
+	\input{ambles/postamble}
+\end{document}
