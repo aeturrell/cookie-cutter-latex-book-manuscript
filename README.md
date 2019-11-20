@@ -7,6 +7,7 @@ An example book manuscript in latex with chapters (+ word count stats by chapter
 3. `conda env create -f cclb_env.yml` -- this creates the Python environment for running the word count
 4. Replace text in `.git/hooks/` directory as below
 5. To export to word, run book_to_word_script.sh -- this takes the styles in ref.docx and exports the tex in book_compiler to exported_word/book.docx
+6. When you commit a change to git, the python script will automatically populate book_word_stats.html, a table of progress toward writing target
 
 ## Chapter-by-chapter word count via git hook
 
