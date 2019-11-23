@@ -1,17 +1,11 @@
 #!/usr/bin/env python3
 """
-
 @author: Arthur
 
-Script called as git pre-commit hook. Counts words in each
-chapter and total toward 85,000.
-Results output into scratch/book_word_stats.html
+Counts words in each chapter, and total,
+ toward user given overall desired total.
 
-NB this is run by
-.git/hooks/pre-commit
-which simply does
-python precommit/word_count.py
-
+Exports to html file
 """
 import subprocess
 import os
