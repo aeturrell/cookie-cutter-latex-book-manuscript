@@ -1,4 +1,4 @@
-# cookie-cutter-latex-book
+# cookie-cutter-latex-book-manuscript
 An example book manuscript in latex with chapters, word count stats by chapter, a bibliography, support for figures, and export to Microsoft Word format via pandoc. 
 
 The idea is to keep the manuscript as simple as possible, but no simpler.
