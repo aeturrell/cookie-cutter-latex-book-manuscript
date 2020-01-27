@@ -40,7 +40,7 @@ python scripts/word_count.py
 ## Exporting to Microsoft Word
 Run ``chmod +x scripts/ms_to_word`` followed by ``./scripts/ms_to_word.sh``. This calls the magic line:
 
-`pandoc -s -N --reference-doc ref.docx -F pandoc-crossref -Mchapters book_compiler.tex --bibliography=book_bibliography.bib --csl=ieee.csl -o exported_word/book.docx`
+`pandoc -s -N --reference-doc ref.docx -F pandoc-crossref -Mchapters book_compiler.tex --bibliography=book_bibliography.bib --csl=nature.csl -o exported_word/book.docx`
 
 - `-s` tells pandoc to make a standalone document
 - `-N` enforces numbering (though not in docx, it's included here in case of other output formats being used)
