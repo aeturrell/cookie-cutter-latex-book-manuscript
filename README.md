@@ -38,14 +38,15 @@ python scripts/word_count.py
 ```
 
 ## Exporting to Microsoft Word
+
 Run ``chmod +x scripts/ms_to_word`` followed by ``./scripts/ms_to_word.sh``. This calls the magic line:
 
-`pandoc -s -N --reference-doc ref.docx -F pandoc-crossref -Mchapters book_compiler.tex --bibliography=book_bibliography.bib --csl=nature.csl -o exported_word/book.docx`
+`pandoc -s -N --toc --toc-depth=1 --reference-doc ref.docx --citeproc -Mchapters book_compiler.tex --bibliography=book_bibliography.bib --csl=cookie-cutter-latex-book.csl -o exported_word/book.docx`
 
 - `-s` tells pandoc to make a standalone document
 - `-N` enforces numbering (though not in docx, it's included here in case of other output formats being used)
 - `--reference-doc` tells pandoc to use styles from a reference word doc (can also be used with .odt)
-- `-F` calls a pandoc filter, in this case pandoc-crossref
+- `--citeproc` calls a pandoc filter for references, [citeproc](https://github.com/jgm/citeproc)
 - `-Mchapters` tells this filter to use chapters
 - `*.tex` is the input file
 - `--bibliography=*.bib` tells pandoc where to find citations
